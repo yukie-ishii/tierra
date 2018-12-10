@@ -87,6 +87,13 @@ border: 1px solid #000;
         }
     }
 }
+
+footer {
+    height: 500px;
+    background-color: #000;
+    color: #fff;
+}
+
 /* -------------------------------------
 HOME------------------------------------ */
 .home #hero {
@@ -116,6 +123,7 @@ HOME------------------------------------ */
     display: grid;
     grid-template-columns: 2fr 1fr 3fr 3fr;
     grid-template-rows: 1fr 2fr 10fr;
+border: 1px solid #ddd;
     h2 {
         padding: 10px 30px;
         margin: 0;
@@ -140,6 +148,46 @@ background-color: pink;
     }
 }
 
+.concept {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 11fr;
+border: 1px solid #ddd;
+        h2 {
+        padding: 10px 30px;
+        margin: 0;
+        clear: both;
+        grid-column: 3;
+        grid-row: 1 / 3;
+        z-index: 5;
+color: #fff;
+background-color: black;
+    }
+        .content {
+        grid-column: 2 / -2;
+        grid-row: 2 / 4;
+        padding: 50px 150px;
+background-color: pink;
+        h3 {
+            text-align: center;
+            clear: both;
+        }
+    }
+}
 
+.bunner {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    .bun {
+        padding: 30px;
+border: 1px solid #ddd;
+        h2, p {
+        text-align: center;
+        }
+    }
+}
 /* -------------------------------------
 基本------------------------------------ */
