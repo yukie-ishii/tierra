@@ -80,6 +80,13 @@ header .main_nav ul li i {
     display: block;
   }
 }
+footer {
+  margin-top: 200px;
+  height: 500px;
+  background-color: #303;
+  color: #fff;
+}
+
 /* -------------------------------------
 HOME------------------------------------ */
 .home #hero {
@@ -109,6 +116,8 @@ HOME------------------------------------ */
   display: grid;
   grid-template-columns: 2fr 1fr 3fr 3fr;
   grid-template-rows: 1fr 2fr 10fr;
+  margin-top: 100px;
+  border: 1px solid #ddd;
 }
 .des h2 {
   padding: 10px 30px;
@@ -118,19 +127,104 @@ HOME------------------------------------ */
   grid-row: 2;
   z-index: 5;
   color: #fff;
-  background-color: black;
+  background-color: #303;
+}
+.des img {
+  grid-column: 1 / 3;
+  grid-row: 3 / -1;
 }
 .des .content {
   grid-column: 2 / -1;
   grid-row: 1 / 4;
-  padding: 50px 70px;
-  background-color: pink;
+  padding: 50px 150px;
+  background-color: rgba(240, 240, 240, 0.9);
 }
 .des .content h3 {
   text-align: center;
 }
 .des .content p {
-  margin-top: 30px;
+  margin-top: 60px;
+}
+
+.concept {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 11fr;
+  background-image: url(../images/consept1.jpg);
+  background-position: right top;
+  border: 1px solid #ddd;
+}
+.concept h2 {
+  padding: 10px 30px;
+  margin: 0;
+  clear: both;
+  grid-column: 3;
+  grid-row: 1 / 3;
+  z-index: 5;
+  color: #fff;
+  background-color: #303;
+}
+.concept .content {
+  grid-column: 2 / -2;
+  grid-row: 2 / 4;
+  padding: 50px 150px;
+  background-color: rgba(240, 240, 240, 0.9);
+}
+.concept .content h3 {
+  text-align: center;
+  clear: both;
+  margin-top: 60px;
+}
+.concept .content p {
+  margin-top: 60px;
+}
+
+.bunner {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  max-width: 1120px;
+}
+.bunner .bun {
+  padding: 30px;
+  border: 1px solid #ddd;
+}
+.bunner .bun h2, .bunner .bun p {
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0px 10px 20px white, 0px -10px 20px white;
+}
+
+.bun:nth-child(1) {
+  background-image: url(../images/about_top.jpg);
+}
+.bun:nth-child(1):hover {
+  background-image: url(../images/about_top_h.jpg);
+}
+
+.bun:nth-child(2) {
+  background-image: url(../images/collection_top.jpg);
+}
+.bun:nth-child(2):hover {
+  background-image: url(../images/collection_top_h.jpg);
+}
+
+.bun:nth-child(3) {
+  background-image: url(../images/blog_top.jpg);
+}
+.bun:nth-child(3):hover {
+  background-image: url(../images/blog_top_h.jpg);
+}
+
+.bun:nth-child(4) {
+  background-image: url(../images/contact_top.jpg);
+}
+.bun:nth-child(4):hover {
+  background-image: url(../images/contact_top_h.jpg);
 }
 
 /* -------------------------------------
