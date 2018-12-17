@@ -155,7 +155,7 @@ footer:before {
 
 /* -------------------------------------
 HOME------------------------------------ */
-.home #hero {
+#home #hero {
     background-image: url(../images/top_hero1.jpg);
     background-repeat: no-repeat;
     background-position: center top;
@@ -264,7 +264,7 @@ background-color: rgba(240, 240, 240, 0.9);
     max-width: 1120px;
     .bun {
         padding: 30px;
-border: 1px solid #ddd;
+        border: 1px solid #ddd;
         h2, p {
             text-align: center;
             font-weight: bold;
@@ -322,6 +322,144 @@ border: 1px solid #ddd;
 @keyframes fadeInDown {
  0% { opacity: 0; -webkit-transform: translateY(-20px); -ms-transform: translateY(-20px); transform: translateY(-20px); }
  100% { opacity: 1; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
+}
+/* -------------------------------------
+ABOUT ------------------------------------ */
+#about {
+    background-image: url(../images/about_hero.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 800px;
+    clear: both;
+    top: 0;
+}
+
+.plofile {
+    margin:350px auto 100px auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 90%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr 8fr;
+    h2 {
+        font-size: 2.5em;
+        margin: auto 0;
+        grid-column: 2 / -2;
+        grid-row: 1;
+        z-index: 5;
+        text-align: center;
+    }
+    img {
+        grid-column: 1 / 4;
+        grid-row: 2 / -1;
+        z-index: 5;
+    }
+    .content {
+        grid-column: 4 / -1;
+        grid-row: 2 / -1;
+        z-index: 5;
+        padding: 0 40px 30px 20px;
+        h3 {
+            font-size: 1.5em;
+            text-align: center;
+        }
+        p.center {
+            text-align: center;
+            padding-bottom: 30px;
+            font-weight: bold;
+        }
+    }
+}
+
+.picky {
+    margin: 0 auto;
+    padding: 10px 50px 50px 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 90%;
+    text-align: center;
+    h2 {
+        font-size: 2.5em;
+        margin: 0;
+    }
+    .content {
+        margin: 50px;
+    }
+}
+
+/* -------------------------------------
+COLLECTION------------------------------------ */
+#collection {
+    background-image: url(../images/collection_hero.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 800px;
+    clear: both;
+    top: 0;
+}
+
+.i_content {
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 350px auto 0 auto;
+    width: 90%;
+    h2 {
+        text-align: center;
+        margin: 0;
+        padding: 50px 0 20px 0;
+        font-size: 2.5em;
+        line-height: 0.5em;
+        span {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+.items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 600px;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    justify-content: center;
+    padding: 10px;
+    .item {
+        border: 1px solid #ddd;
+        h3 {
+            text-align: center;
+            margin-bottom: 0;
+        }
+        img {
+            width: 100%;
+        }
+        h4 {
+            text-align: center;
+            margin: 10px 0 0 0;
+        }
+        p {
+            margin: 0;
+            padding: 10px;
+        }
+    }
+    .item:hover {
+        background-color: rgba(255, 255, 255, 1);
+    }
+}
+
+.selling {
+    h2 {
+        padding-top: 50px;
+        line-height: 0.9em;
+        text-align: center;
+    }
+    .content {
+        text-align: center;
+        padding-bottom: 50px;
+    }
 }
 /* -------------------------------------
 基本------------------------------------ */
