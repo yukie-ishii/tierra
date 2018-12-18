@@ -8,7 +8,6 @@ $color: #fofofo;
 /* -----------------------------------
 全体設定------------------------------- */
 body {
-background-color: red;
     font-family: 'Charmonman', cursive, "Yu Gothic", "æ¸¸ã‚´ã‚·ãƒƒã‚¯", YuGothic, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", sans-serif;
     font-size: 16px;
     line-height: 1.8;
@@ -20,20 +19,40 @@ background-color: red;
 }
 
 ul {
-    display: flex;
     margin: 0;
     li{
         list-style-type: none;
     }
 }
 
+footer {
+    background-color: $m-color;
+}
+
+.fot_logo p,.fot_text ul li {
+    display: none;
+}
+
+.fot_logo img {
+    display: block;
+    margin: 30px auto 0 auto;
+    padding-top: 20px;
+    }
+
+.fot_text {
+    margin: 0;
+    padding: 5px;
+    color: #fff;
+    text-align: center;
+}
+
 /* -------------------------------------
 基本------------------------------------ */
 header {
-    height: 10%;
+    height: 50px;
     width: 100%;
     display: flex;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
     position: fixed;
     top: 0;
     z-index: 500;
@@ -50,27 +69,434 @@ header {
 }
 
 .main_nav {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
+    display: none;
+}
+
+.nav-drawer {
+    width: 50px;
+    padding: 12px;
+    position: relative;
+    /*チェックボックス等は非表示に*/
+    .nav-unshown {
+      display:none;
+    }
+    /*アイコンのスペース*/
+    #nav-open {
+    display: inline-block;
+    width: 26px;
+    height: 22px;
+    vertical-align: middle;
+    }
+    /*ハンバーガーアイコンをCSSだけで表現*/
+    #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 5px;/*線の太さ*/
+    width: 25px;/*長さ*/
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+    }
+    #nav-open span:before {
+    bottom: -8px;
+    }
+    #nav-open span:after {
+    bottom: -16px;
+    }
+    /*閉じる用の薄黒カバー*/
+    #nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    }
+    /*中身*/
+    #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;/*最前面に*/
+    width: 30%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    // max-width: 330px;/*最大幅（調整してください）*/
+    height: 100%;
+    // background: #fff;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
+    }
+    /*チェックが入ったらもろもろ表示*/
+    #nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+    }
+    #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba( 0, 0, 0,.15);
+    }
+}
+
+.nav-drawer:hover {
+    background-color: #f0f0f0;
+}
+
+#nav-content {
     ul {
+        height: 100%;
         padding: 0;
         li {
-            text-align: center;
+            height: 25%;
+            border: 1px solid #ddd;
+            font-weight: bold;
             a {
-                padding: 35px 10px 10px 10px;
                 display: block;
-                width: 100%;
                 height: 100%;
+                padding: 30px 0 0 15px;
             }
             a:hover {
-                background-color: rgba(255, 255, 255, 0.9);
+                background-color: rgba(255, 255, 255, 0.5);
             }
-            i {
-                font-size: 1.5em;
-                display: block;
-                display: none;
-            }
+        }
+        li:nth-child(1) {
+            background-image: url(../images/sp_nav_home.jpg);
+        }
+        li:nth-child(2) {
+            background-image: url(../images/sp_nav_about.jpg);
+        }
+        li:nth-child(3) {
+            background-image: url(../images/sp_nav_collection.jpg);
+        }
+        li:nth-child(4) {
+            background-image: url(../images/sp_nav_contact.jpg);
+        }
+    }
+}
+
+#hero {
+    background-image: url(../images/top_hero1.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    margin-top: 50px;
+    width: 100%;
+    height: 300px;
+    p {
+        color: #fff;
+        text-shadow: 0px 2px 10px #000,
+                    0px -2px 10px #000;
+        padding: 10px 30px 0 30px;
+        margin: 0;
+        text-align: center;
+        span {
+            display: none;
+        }
+    }
+}
+
+/* -------------------------------------
+HOME------------------------------------ */
+.des, .concept {
+    width: 100%;
+    h2 {
+        background-color: $m-color;
+        color: #fff;
+        text-align: center;
+        width: 200px;
+        margin: 30px auto 0 auto;
+        padding: 10px 0;
+    }
+    img {
+        display: none;
+    }
+    .content {
+        padding: 20px;
+        h3 {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0;
+            padding: 10px;
+        }
+        p {
+            font-size: 0.9em;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0;
+            padding: 0 10px 10px 10px;
+        }
+    }
+}
+
+.des .content {
+    background-image: url(../images/consept.jpg);
+    background-size: cover;
+    border: 2px solid $m-color;
+}
+
+.concept .content {
+    background-image: url(../images/consept1.jpg);
+    background-size: cover;
+    border: 2px solid $m-color;
+}
+
+// スクロールするとふわっと現れる文字
+.fadeInDown {
+ -webkit-animation-fill-mode:both;
+ -ms-animation-fill-mode:both;
+ animation-fill-mode:both;
+ -webkit-animation-duration:1s;
+ -ms-animation-duration:1s;
+ animation-duration:1s;
+ -webkit-animation-name: fadeInDown;
+ animation-name: fadeInDown;
+ visibility: visible !important;
+}
+@-webkit-keyframes fadeInDown {
+ 0% { opacity: 0; -webkit-transform: translateY(-20px); }
+ 100% { opacity: 1; -webkit-transform: translateY(0); }
+}
+@keyframes fadeInDown {
+ 0% { opacity: 0; -webkit-transform: translateY(-20px); -ms-transform: translateY(-20px); transform: translateY(-20px); }
+ 100% { opacity: 1; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
+}
+
+.bunner {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    .bun {
+        padding: 30px;
+        border: 1px solid #ddd;
+        h2, p {
+            text-align: center;
+            font-weight: bold;
+            color: #000;
+            text-shadow: 0px 1px 1px #fff,
+                        0px -1px 1px #fff;
+        }
+        p {
+            font-family: "Sawarabi Mincho","游明朝",YuMincho,Meiryo,"Hiragino Mincho ProN",serif;
+        }
+    }
+}
+
+.bun:nth-child(1) {
+    background-image: url(../images/about_top.jpg);
+    &:hover {
+        background-image: url(../images/about_top_h.jpg);
+    }
+}
+.bun:nth-child(2) {
+    background-image: url(../images/collection_top.jpg);
+    &:hover {
+        background-image: url(../images/collection_top_h.jpg);
+    }
+}
+.bun:nth-child(3) {
+    background-image: url(../images/blog_top.jpg);
+    &:hover {
+        background-image: url(../images/blog_top_h.jpg);
+    }
+}
+.bun:nth-child(4) {
+    background-image: url(../images/contact_top.jpg);
+    &:hover {
+        background-image: url(../images/contact_top_h.jpg);
+    }
+}
+
+/* -------------------------------------
+ABOUT------------------------------------ */
+#about {
+    background-image: url(../images/about_hero.jpg);
+    background-position: center top;
+    background-repeat: repeat-y;
+    background-size: contain;
+    background-attachment: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.plofile {
+    margin-top: 200px;
+    h2 {
+        background-color: $m-color;
+        color: #fff;
+        text-align: center;
+        width: 200px;
+        margin: 30px auto 0 auto;
+        padding: 10px 0;
+    }
+    img {
+        width: 50%;
+        float: left;
+        margin: 10px;
+    }
+    .content {
+        border: 2px solid $m-color;
+        background-color: rgba(240, 240, 240, 1);
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+.picky {
+    margin-top: 50px;
+    h2 {
+        background-color: $m-color;
+        color: #fff;
+        text-align: center;
+        width: 200px;
+        margin: 30px auto 0 auto;
+        padding: 10px 0;
+    }
+    .content {
+        border: 2px solid $m-color;
+        background-color: rgba(240, 240, 240, 1);
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+/* -------------------------------------
+COLLECTION------------------------------------ */
+#collection {
+    background-image: url(../images/collection_hero.jpg);
+    background-position: center top;
+    background-repeat: repeat-y;
+    background-size: contain;
+    background-attachment: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.i_content {
+    margin-top: 200px;
+    h2 {
+        background-color: $m-color;
+        color: #fff;
+        text-align: center;
+        width: 200px;
+        margin: 30px auto 0 auto;
+        padding: 20px 0 10px 0;
+        line-height: 0.8;
+        span {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+.items {
+    background-color: rgba(240, 240, 240, 1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    justify-content: center;
+    .item {
+        width: 100%;
+        border: 1px solid #ddd;
+        h3 {
+            font-family: "Sawarabi Mincho","游明朝",YuMincho,Meiryo,"Hiragino Mincho ProN",serif;
+            text-shadow: 0px 2px 5px $color,
+                        0px -2px 5px $color;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        img {
+            width: 100%;
+        }
+        h4 {
+            text-align: center;
+            margin: 10px 0;
+        }
+        p {
+            display: none;
+        }
+    }
+    .item:hover {
+        background-color: rgba(255, 255, 255, 1);
+    }
+}
+
+.selling {
+    h2 {
+        text-align: center;
+        line-height: 1.2;
+        span {
+            font-size: 0.8rem;
+        }
+    }
+    .content {
+        background-color: rgba(240, 240, 240, 1);
+        border: 1px solid #ddd;
+        text-align: center;
+        margin: 0;
+        padding: 16px;
+        p {
+            margin: 0;
+        }
+    }
+}
+
+/* -------------------------------------
+CONTACT------------------------------------ */
+#contact {
+    background-image: url(../images/contact_hero.jpg);
+    background-position: center top;
+    background-repeat: repeat-y;
+    background-size: contain;
+    background-attachment: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.contact_des {
+    margin-top: 200px;
+    h2 {
+        background-color: $m-color;
+        color: #fff;
+        text-align: center;
+        width: 200px;
+        margin: 30px auto 0 auto;
+        padding: 20px 0 10px 0;
+        line-height: 0.8;
+        span {
+            font-size: 0.8rem;
+        }
+    }
+    .input {
+        background-color: rgba(240, 240, 240, 0.8);
+        border: 1px solid #ddd;
+        text-align: center;
+        margin: 0;
+        padding: 16px;
+        p {
+        margin-top: 30px;
+        }
+        [type="text"] {
+            width: 70%;
+        }
+        [type="email"] {
+            width: 90%;
+        }
+        textarea {
+            width: 90%;
+            height: 200px;
+        }
+        [type="submit"] {
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+        span {
+            font-size: 0.8rem;
         }
     }
 }

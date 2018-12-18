@@ -4,7 +4,6 @@
 /* -----------------------------------
 全体設定------------------------------- */
 body {
-  background-color: red;
   font-family: 'Charmonman', cursive, "Yu Gothic", "æ¸¸ã‚´ã‚·ãƒƒã‚¯", YuGothic, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", sans-serif;
   font-size: 16px;
   line-height: 1.8;
@@ -16,20 +15,40 @@ body a {
 }
 
 ul {
-  display: flex;
   margin: 0;
 }
 ul li {
   list-style-type: none;
 }
 
+footer {
+  background-color: #303;
+}
+
+.fot_logo p, .fot_text ul li {
+  display: none;
+}
+
+.fot_logo img {
+  display: block;
+  margin: 30px auto 0 auto;
+  padding-top: 20px;
+}
+
+.fot_text {
+  margin: 0;
+  padding: 5px;
+  color: #fff;
+  text-align: center;
+}
+
 /* -------------------------------------
 基本------------------------------------ */
 header {
-  height: 10%;
+  height: 50px;
   width: 100%;
   display: flex;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
   position: fixed;
   top: 0;
   z-index: 500;
@@ -46,29 +65,455 @@ header h1 img {
 }
 
 .main_nav {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row-reverse;
+  display: none;
 }
-.main_nav ul {
-  padding: 0;
+
+.nav-drawer {
+  width: 50px;
+  padding: 12px;
+  position: relative;
+  /*チェックボックス等は非表示に*/
+  /*アイコンのスペース*/
+  /*ハンバーガーアイコンをCSSだけで表現*/
+  /*閉じる用の薄黒カバー*/
+  /*中身*/
+  /*チェックが入ったらもろもろ表示*/
 }
-.main_nav ul li {
-  text-align: center;
+.nav-drawer .nav-unshown {
+  display: none;
 }
-.main_nav ul li a {
-  padding: 35px 10px 10px 10px;
+.nav-drawer #nav-open {
+  display: inline-block;
+  width: 26px;
+  height: 22px;
+  vertical-align: middle;
+}
+.nav-drawer #nav-open span, .nav-drawer #nav-open span:before, .nav-drawer #nav-open span:after {
+  position: absolute;
+  height: 5px;
+  /*線の太さ*/
+  width: 25px;
+  /*長さ*/
+  border-radius: 3px;
+  background: #555;
   display: block;
+  content: '';
+  cursor: pointer;
+}
+.nav-drawer #nav-open span:before {
+  bottom: -8px;
+}
+.nav-drawer #nav-open span:after {
+  bottom: -16px;
+}
+.nav-drawer #nav-close {
+  display: none;
+  /*はじめは隠しておく*/
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  /*全体に広がるように*/
+  left: 0;
   width: 100%;
   height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
 }
-.main_nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.9);
+.nav-drawer #nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  /*最前面に*/
+  width: 30%;
+  /*右側に隙間を作る（閉じるカバーを表示）*/
+  height: 100%;
+  transition: .3s ease-in-out;
+  /*滑らかに表示*/
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);
+  /*左に隠しておく*/
 }
-.main_nav ul li i {
-  font-size: 1.5em;
+.nav-drawer #nav-input:checked ~ #nav-close {
   display: block;
+  /*カバーを表示*/
+  opacity: .5;
+}
+.nav-drawer #nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  /*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.nav-drawer:hover {
+  background-color: #f0f0f0;
+}
+
+#nav-content ul {
+  height: 100%;
+  padding: 0;
+}
+#nav-content ul li {
+  height: 25%;
+  border: 1px solid #ddd;
+  font-weight: bold;
+}
+#nav-content ul li a {
+  display: block;
+  height: 100%;
+  padding: 30px 0 0 15px;
+}
+#nav-content ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#nav-content ul li:nth-child(1) {
+  background-image: url(../images/sp_nav_home.jpg);
+}
+#nav-content ul li:nth-child(2) {
+  background-image: url(../images/sp_nav_about.jpg);
+}
+#nav-content ul li:nth-child(3) {
+  background-image: url(../images/sp_nav_collection.jpg);
+}
+#nav-content ul li:nth-child(4) {
+  background-image: url(../images/sp_nav_contact.jpg);
+}
+
+#hero {
+  background-image: url(../images/top_hero1.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  margin-top: 50px;
+  width: 100%;
+  height: 300px;
+}
+#hero p {
+  color: #fff;
+  text-shadow: 0px 2px 10px #000, 0px -2px 10px #000;
+  padding: 10px 30px 0 30px;
+  margin: 0;
+  text-align: center;
+}
+#hero p span {
   display: none;
+}
+
+/* -------------------------------------
+HOME------------------------------------ */
+.des, .concept {
+  width: 100%;
+}
+.des h2, .concept h2 {
+  background-color: #303;
+  color: #fff;
+  text-align: center;
+  width: 200px;
+  margin: 30px auto 0 auto;
+  padding: 10px 0;
+}
+.des img, .concept img {
+  display: none;
+}
+.des .content, .concept .content {
+  padding: 20px;
+}
+.des .content h3, .concept .content h3 {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  padding: 10px;
+}
+.des .content p, .concept .content p {
+  font-size: 0.9em;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  padding: 0 10px 10px 10px;
+}
+
+.des .content {
+  background-image: url(../images/consept.jpg);
+  background-size: cover;
+  border: 2px solid #303;
+}
+
+.concept .content {
+  background-image: url(../images/consept1.jpg);
+  background-size: cover;
+  border: 2px solid #303;
+}
+
+.fadeInDown {
+  -webkit-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  visibility: visible !important;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.bunner {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.bunner .bun {
+  padding: 30px;
+  border: 1px solid #ddd;
+}
+.bunner .bun h2, .bunner .bun p {
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0px 1px 1px #fff, 0px -1px 1px #fff;
+}
+.bunner .bun p {
+  font-family: "Sawarabi Mincho","游明朝",YuMincho,Meiryo,"Hiragino Mincho ProN",serif;
+}
+
+.bun:nth-child(1) {
+  background-image: url(../images/about_top.jpg);
+}
+.bun:nth-child(1):hover {
+  background-image: url(../images/about_top_h.jpg);
+}
+
+.bun:nth-child(2) {
+  background-image: url(../images/collection_top.jpg);
+}
+.bun:nth-child(2):hover {
+  background-image: url(../images/collection_top_h.jpg);
+}
+
+.bun:nth-child(3) {
+  background-image: url(../images/blog_top.jpg);
+}
+.bun:nth-child(3):hover {
+  background-image: url(../images/blog_top_h.jpg);
+}
+
+.bun:nth-child(4) {
+  background-image: url(../images/contact_top.jpg);
+}
+.bun:nth-child(4):hover {
+  background-image: url(../images/contact_top_h.jpg);
+}
+
+/* -------------------------------------
+ABOUT------------------------------------ */
+#about {
+  background-image: url(../images/about_hero.jpg);
+  background-position: center top;
+  background-repeat: repeat-y;
+  background-size: contain;
+  background-attachment: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.plofile {
+  margin-top: 200px;
+}
+.plofile h2 {
+  background-color: #303;
+  color: #fff;
+  text-align: center;
+  width: 200px;
+  margin: 30px auto 0 auto;
+  padding: 10px 0;
+}
+.plofile img {
+  width: 50%;
+  float: left;
+  margin: 10px;
+}
+.plofile .content {
+  border: 2px solid #303;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+.picky {
+  margin-top: 50px;
+}
+.picky h2 {
+  background-color: #303;
+  color: #fff;
+  text-align: center;
+  width: 200px;
+  margin: 30px auto 0 auto;
+  padding: 10px 0;
+}
+.picky .content {
+  border: 2px solid #303;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+/* -------------------------------------
+COLLECTION------------------------------------ */
+#collection {
+  background-image: url(../images/collection_hero.jpg);
+  background-position: center top;
+  background-repeat: repeat-y;
+  background-size: contain;
+  background-attachment: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.i_content {
+  margin-top: 200px;
+}
+.i_content h2 {
+  background-color: #303;
+  color: #fff;
+  text-align: center;
+  width: 200px;
+  margin: 30px auto 0 auto;
+  padding: 20px 0 10px 0;
+  line-height: 0.8;
+}
+.i_content h2 span {
+  font-size: 0.8rem;
+}
+
+.items {
+  background-color: #f0f0f0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  justify-content: center;
+}
+.items .item {
+  width: 100%;
+  border: 1px solid #ddd;
+}
+.items .item h3 {
+  font-family: "Sawarabi Mincho","游明朝",YuMincho,Meiryo,"Hiragino Mincho ProN",serif;
+  text-shadow: 0px 2px 5px #fofofo, 0px -2px 5px #fofofo;
+  text-align: center;
+  margin-bottom: 0;
+}
+.items .item img {
+  width: 100%;
+}
+.items .item h4 {
+  text-align: center;
+  margin: 10px 0;
+}
+.items .item p {
+  display: none;
+}
+.items .item:hover {
+  background-color: white;
+}
+
+.selling h2 {
+  text-align: center;
+  line-height: 1.2;
+}
+.selling h2 span {
+  font-size: 0.8rem;
+}
+.selling .content {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  text-align: center;
+  margin: 0;
+  padding: 16px;
+}
+.selling .content p {
+  margin: 0;
+}
+
+/* -------------------------------------
+CONTACT------------------------------------ */
+#contact {
+  background-image: url(../images/contact_hero.jpg);
+  background-position: center top;
+  background-repeat: repeat-y;
+  background-size: contain;
+  background-attachment: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.contact_des {
+  margin-top: 200px;
+}
+.contact_des h2 {
+  background-color: #303;
+  color: #fff;
+  text-align: center;
+  width: 200px;
+  margin: 30px auto 0 auto;
+  padding: 20px 0 10px 0;
+  line-height: 0.8;
+}
+.contact_des h2 span {
+  font-size: 0.8rem;
+}
+.contact_des .input {
+  background-color: rgba(240, 240, 240, 0.8);
+  border: 1px solid #ddd;
+  text-align: center;
+  margin: 0;
+  padding: 16px;
+}
+.contact_des .input p {
+  margin-top: 30px;
+}
+.contact_des .input [type="text"] {
+  width: 70%;
+}
+.contact_des .input [type="email"] {
+  width: 90%;
+}
+.contact_des .input textarea {
+  width: 90%;
+  height: 200px;
+}
+.contact_des .input [type="submit"] {
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+.contact_des .input span {
+  font-size: 0.8rem;
 }
 
 /*# sourceMappingURL=sp.css.map */

@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/sp.css" media="screen and (max-width: 480px)">
 </head>
 
-<body id="home">
+<body id="contact">
 
 <header>
     <h1><a href="index.html"><img src="images/logo_header.png" alt="ティエラ(ブランド名)　オルゴナイト(パワーストーンの種類)" width="95%"></a></h1>
@@ -41,67 +41,23 @@
     </div>
 </header>
 
-    <div id="hero">
-            <p>側に置いた瞬間からポジティブなエネルギーが満ち溢れ、<br>幸運体質へ導く TIERRA のアートオルゴナイト。<br>
-            <span>パワーストーンを特殊加工する事で、見た目の美しさと共に<br>癒し・愛・金運など目的別のエネルギーを拡大させます。</span></p>
-    </div>
-
 <div class="wrap">
     <main>
-    <div class="des">
-        <h2>ORGONITE</h2>
-        <img src="images/consept.jpg" alt="">
-        <div class="content">
-            <h3>オルゴナイトとは</h3>
-            <p class="animation">オーストリア出身のウィルヘルム・ライヒ博士が発見したと言われる全ての物質・空間に存在するエネルギーの事です。<br>
-            当時は、有機物と無機物を重ね合わせた箱・オルゴンアキュムレーター(集積器)として病気の治療などの研究が進められていました。<br>
-            一度は表舞台から姿を消したが、アメリカの発明家クロフト夫妻によって一定量の割合でクリスタル(有機物)と金属(無機物)を樹脂で固める事により、さらにパワーが増強する事が発見された。<br>
-            2000年、動力(電源)不要の空間浄化装置・オルゴナイトが世界に発表され、
-            「世界を救う技術」として、今世界中に広がりを見せています。<a href="#">-MORE-</a></p>
-        </div>
-    </div>
-
-    <div class="concept">
-        <h2>CONCEPT</h2>
-        <div class="content">
-            <h3>TIERRAのオルゴナイト</h3>
-            <p class="animation">TIERRA(ティエラ)はスペイン語で【地球・大地】を意味する単語です。</p>
-            <p class="animation">TIERRAのシンボルマークは、<br>
-            地球の大地の分身であるパワーストーンから作り出し、<br>
-            地球をとりまく大気やエネルギーを組み、<br>
-            拡大のエネルギーを生みだし続けるオルゴナイトを表現。<br>
-            エネルギーが芯から湧きあがり、拡散していく<br>
-            実際のオルゴナイトのエネルギーイメージを視覚化させています。</p>
-            <p class="animation">TIERRAは、多くの人にオルゴナイトの魅力を伝えるため<br>
-            “見た瞬間にその世界が目の前に広がる”　そんな絵を描いたような、<br>
-            常にそばに置きたくなるような、オルゴナイトに仕上げています。</p>
-        </div>
-    </div>
-
-    <div class="bunner">
-        <div class="bun">
-            <a href="">
-                <h2>ABOUT</h2>
-                <p>アーテスト紹介</p>
-            </a>
-        </div>
-        <div class="bun">
-            <a href="">
-                <h2>COLLECTION</h2>
-                <p>作品集</p>
-            </a>
-        </div>
-        <div class="bun">
-            <a href="">
-                <h2>BLOG</h2>
-                <p>TIERRAブログ</p>
-            </a>
-        </div>
-        <div class="bun">
-            <a href="">
-                <h2>CONTACT</h2>
-                <p>お問い合わせ<br>ご感想</p>
-            </a>
+    <div class="contact_des">
+        <h2>Contact<br><span>-お問い合わせ・ご感想-</span></h2>
+        <div class="input">
+            <p>NAME　<span>-お名前-</span><br>
+                <input type="text" placeholder="　お名前（全角）" required></p>
+            <p>MAIL　<span>-メールアドレス-</span><br>
+                <input type="email" placeholder="　aaa@aaa.aaa(半角英数字)" required></p>
+            <p>TYPE　<span>-お問い合わせの種類-<span><br>
+                <select name="select" required>
+                    <option>お問い合わせ</option>
+                    <option>ご感想</option>
+                </select>
+            </p>
+            <p>MESSAGE　<span>-お問い合わせ内容・ご感想-<span><br><textarea name="message" required></textarea></p>
+            <p><input type="submit" value="SEND　-送信-"></p>
         </div>
     </div>
     </main>
@@ -133,7 +89,7 @@ $(document).ready(function(){
     // ページ読み込み時に実行したい処理
 
     // heroイメージの画像切り替えプラグイン
-    $('#home #hero').bgSwitcher({
+    $('.home #hero').bgSwitcher({
         images: ['images/top_hero1.jpg','images/top_hero2.jpg','images/top_hero3.jpg','images/top_hero4.jpg'],
     });
 
@@ -156,7 +112,6 @@ $(document).ready(function(){
          }
      });
    });
-
 
 });
 </script>
