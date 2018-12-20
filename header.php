@@ -28,6 +28,14 @@ else {
 
 <body id="<?php echo $bodyClass; ?>">
 
+
+
+
+<div class="open">
+</div>
+
+
+
 <header>
     <h1><a href="<?php echo home_url(); ?>"><img src="<?php the_path(); ?>/images/logo_header.png" alt="ティエラ(ブランド名)　オルゴナイト(パワーストーンの種類)" width="95%"></a></h1>
     <nav class="main_nav">
@@ -53,5 +61,11 @@ else {
     </div>
 </header>
 
+<?php if($bodyClass === "home"): ?>
+    <div id="hero">
+            <p>側に置いた瞬間からポジティブなエネルギーが満ち溢れ、<br>幸運体質へ導く TIERRA のアートオルゴナイト。<br>
+            <span>パワーストーンを特殊加工する事で、見た目の美しさと共に<br>癒し・愛・金運など目的別のエネルギーを拡大させます。</span></p>
+    </div>
+<?php endif;  ?>
 <div class="wrap">
     <main>

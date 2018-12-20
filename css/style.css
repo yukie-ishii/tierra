@@ -24,6 +24,23 @@ ul li {
 
 /* -------------------------------------
 基本------------------------------------ */
+.open {
+  background-image: url(../images/logo_footer.png);
+  background-color: #303;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: auto;
+  width: 128px;
+  height: 64px;
+  z-index: 1000;
+}
+
 header {
   height: 100px;
   width: 100%;

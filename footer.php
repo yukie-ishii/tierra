@@ -24,11 +24,21 @@
 
 <script>
 $(document).ready(function(){
+
+
+
     // ページ読み込み時に実行したい処理
+    $(window).on('load resize', function(){
+    var mainheight = $(window).height();
+    var mainwidth = $(window).width();
+    $('.open').css('height', mainheight);
+    $('.open').css('width', mainwidth);
+    console.log(mainwidth);
+});
 
     // heroイメージの画像切り替えプラグイン
-    $('.home #hero').bgSwitcher({
-        images: ['images/top_hero1.jpg','images/top_hero2.jpg','images/top_hero3.jpg','images/top_hero4.jpg'],
+    $('#home #hero').bgSwitcher({
+        images: ['<?php the_path(); ?>/images/top_hero1.jpg','<?php the_path(); ?>/images/top_hero2.jpg','<?php the_path(); ?>/images/top_hero3.jpg','<?php the_path(); ?>/images/top_hero4.jpg'],
     });
 
     // TOPへ戻る

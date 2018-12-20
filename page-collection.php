@@ -2,7 +2,6 @@
     <div class="i_content">
         <h2>Collection<br><span>-参考商品-</span></h2>
         <div class="items">
-            <div class="item">
 <?php
 $args =  [
     "post_type" => "collection",
@@ -15,15 +14,14 @@ $customPosts = get_posts($args);
     <?php foreach ($customPosts as $post): ?>
     <?php setup_postdata($post); ?>
 
-
-
+            <div class="item">
                 <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
                 <h3><?php the_title(); ?></h3>
                 <?php the_content(); ?>
+            </div>
     <?php endforeach; ?>
     <?php endif; ?>
     <?php wp_reset_postdata(); ?>
-            </div>
 
         </div>
 
