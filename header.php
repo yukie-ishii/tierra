@@ -29,13 +29,6 @@ else {
 <body id="<?php echo $bodyClass; ?>">
 
 
-
-
-<div class="open">
-</div>
-
-
-
 <header>
     <h1><a href="<?php echo home_url(); ?>"><img src="<?php the_path(); ?>/images/logo_header.png" alt="ティエラ(ブランド名)　オルゴナイト(パワーストーンの種類)" width="95%"></a></h1>
     <nav class="main_nav">
