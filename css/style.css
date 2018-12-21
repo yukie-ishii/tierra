@@ -24,23 +24,6 @@ ul li {
 
 /* -------------------------------------
 基本------------------------------------ */
-.open {
-  background-image: url(../images/logo_footer.png);
-  background-color: #303;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  margin: auto;
-  width: 128px;
-  height: 64px;
-  z-index: 1000;
-}
-
 header {
   height: 100px;
   width: 100%;
@@ -454,7 +437,7 @@ COLLECTION------------------------------------ */
   border: 1px solid #ddd;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-auto-rows: 600px;
+  grid-auto-rows: auto;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
   justify-content: center;
@@ -470,15 +453,12 @@ COLLECTION------------------------------------ */
   margin-bottom: 0;
 }
 .items .item img {
-  width: 100%;
+  width: 90%;
+  margin: 5px;
 }
 .items .item h4 {
   text-align: center;
-  margin: 10px 0 0 0;
-}
-.items .item p {
-  margin: 0;
-  padding: 10px;
+  margin: 10px 0;
 }
 .items .item:hover {
   background-color: white;
@@ -497,6 +477,33 @@ COLLECTION------------------------------------ */
 .selling .content {
   text-align: center;
   padding-bottom: 50px;
+}
+
+/* -------------------------------------
+SINGLE------------------------------------ */
+.single_item {
+  width: 90%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #ddd;
+}
+.single_item h3 {
+  font-family: "Sawarabi Mincho","游明朝",YuMincho,Meiryo,"Hiragino Mincho ProN",serif;
+  text-shadow: 0px 1px 1px #fofofo, 0px -1px 1px #fofofo;
+  text-align: center;
+  margin-bottom: 0;
+}
+.single_item img {
+  width: 100%;
+  float: left;
+}
+.single_item h4 {
+  text-align: center;
+  margin: 10px 0;
+}
+.single_item p {
+  text-align: center;
+  margin: 10px 0;
 }
 
 /* -------------------------------------

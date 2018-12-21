@@ -2,6 +2,9 @@
 if(is_404()){
     $bodyClass = "page404";
 }
+elseif(is_singular("collection")){
+  $bodyClass = "collection";
+}
 else {
     $bodyClass = $post -> post_name;
 }
