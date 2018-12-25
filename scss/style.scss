@@ -28,6 +28,7 @@ ul {
 
 /* -------------------------------------
 基本------------------------------------ */
+
 header {
     height: 100px;
     width: 100%;
@@ -155,6 +156,29 @@ footer:before {
 
 /* -------------------------------------
 HOME------------------------------------ */
+
+.first {
+    background-color: $m-color;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1000;
+    .f_img {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        margin: auto;
+        width: 214px;
+        height: 271px;
+    }
+}
+
+header + div {
+    width: 100%!important;
+}
+
 #home #hero {
     background-image: url(../images/top_hero1.jpg);
     background-repeat: no-repeat;
@@ -441,7 +465,7 @@ COLLECTION------------------------------------ */
         }
         img {
             width: 90%;
-            margin: 5px;
+            margin: 5% 5% 0 5%;
         }
         h4 {
             text-align: center;

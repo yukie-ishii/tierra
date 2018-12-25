@@ -17,6 +17,7 @@
         <p><small>&copy; TIERRA ORGONITE All Rights Reserved.</small></p>
     </div>
 </footer>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
@@ -25,16 +26,24 @@
 <script>
 $(document).ready(function(){
 
-
-
+<?php if(!isset($_COOKIE["f_time"])): ?>
     // ページ読み込み時に実行したい処理
-    $(window).on('load resize', function(){
+    $("#wrapwrap").css("display", "none");
     var mainheight = $(window).height();
     var mainwidth = $(window).width();
-    $('.open').css('height', mainheight);
-    $('.open').css('width', mainwidth);
-    console.log(mainwidth);
-});
+    $('.first').css('height', mainheight);
+    $('.first').css('width', mainwidth);
+    $('.f_img').hide();
+    $('.f_img').fadeIn(2000);
+        setTimeout(function() {
+            $(".first").fadeOut(3000);
+            $("#wrapwrap").css("display", "block");
+        },4000);
+        $(window).click(function() {
+            $(".first").fadeOut(3000);
+            $("#wrapwrap").fadeIn(3000);
+        });
+<?php endif; ?>
 
     // heroイメージの画像切り替えプラグイン
     $('#home #hero').bgSwitcher({
@@ -60,6 +69,7 @@ $(document).ready(function(){
          }
      });
    });
+
 
 });
 </script>

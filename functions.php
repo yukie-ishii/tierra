@@ -20,3 +20,15 @@ register_post_type("collection", [
     "public" => true,
     "supports" => ["title", "thumbnail", "editor"]
     ]);
+
+// 管理用ログイン画面の設定
+function login_css()
+{
+echo '<link rel="stylesheet"
+href="' . get_stylesheet_directory_uri() . '/css/login.css">';
+}
+add_action('login_enqueue_scripts', 'login_css');
+function login_logo_url() {
+return home_url();
+}
+add_filter( 'login_headerurl', 'login_logo_url' );

@@ -13,12 +13,13 @@ $customPosts = get_posts($args);
     <?php if($customPosts): ?>
     <?php foreach ($customPosts as $post): ?>
     <?php setup_postdata($post); ?>
-
-            <div class="item">
+    <?php $slug_name = $post->post_name; ?>
+            <a href="<?php echo home_url(); ?>/collection/<?php echo $slug_name; ?>"><div class="item">
                 <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
                 <h3><?php the_title(); ?></h3>
                 <?php the_content(); ?>
-            </div>
+            </div></a>
+
     <?php endforeach; ?>
     <?php endif; ?>
     <?php wp_reset_postdata(); ?>

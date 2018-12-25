@@ -1,4 +1,6 @@
 <?php
+setcookie("f_time", true, time() + 60 * 60 * 12);
+
 if(is_404()){
     $bodyClass = "page404";
 }
@@ -8,8 +10,6 @@ elseif(is_singular("collection")){
 else {
     $bodyClass = $post -> post_name;
 }
-
-
  ?>
 
 <!DOCTYPE html>
@@ -32,6 +32,13 @@ else {
 <body id="<?php echo $bodyClass; ?>">
 
 
+<?php if(!isset($_COOKIE["f_time"]) && $bodyClass === "home"): ?>
+    <div class="first">
+        <img src="<?php the_path(); ?>/images/logo_footer.png" class="f_img" alt="">
+    </div>
+<?php endif; ?>
+
+<div id="wrapwrap">
 <header>
     <h1><a href="<?php echo home_url(); ?>"><img src="<?php the_path(); ?>/images/logo_header.png" alt="ティエラ(ブランド名)　オルゴナイト(パワーストーンの種類)" width="95%"></a></h1>
     <nav class="main_nav">

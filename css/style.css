@@ -151,6 +151,28 @@ footer:before {
 
 /* -------------------------------------
 HOME------------------------------------ */
+.first {
+  background-color: #303;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1000;
+}
+.first .f_img {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: auto;
+  width: 214px;
+  height: 271px;
+}
+
+header + div {
+  width: 100% !important;
+}
+
 #home #hero {
   background-image: url(../images/top_hero1.jpg);
   background-repeat: no-repeat;
@@ -454,7 +476,7 @@ COLLECTION------------------------------------ */
 }
 .items .item img {
   width: 90%;
-  margin: 5px;
+  margin: 5% 5% 0 5%;
 }
 .items .item h4 {
   text-align: center;
