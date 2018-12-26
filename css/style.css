@@ -509,23 +509,22 @@ SINGLE------------------------------------ */
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid #ddd;
 }
+.single_item img {
+  max-width: 280px;
+  margin: 0 auto;
+}
 .single_item h3 {
   font-family: "Sawarabi Mincho","游明朝",YuMincho,Meiryo,"Hiragino Mincho ProN",serif;
   text-shadow: 0px 1px 1px #fofofo, 0px -1px 1px #fofofo;
   text-align: center;
   margin-bottom: 0;
 }
-.single_item img {
-  width: 100%;
-  float: left;
-}
 .single_item h4 {
   text-align: center;
-  margin: 10px 0;
 }
 .single_item p {
   text-align: center;
-  margin: 10px 0;
+  margin: 0 20px 30px 20px;
 }
 
 /* -------------------------------------

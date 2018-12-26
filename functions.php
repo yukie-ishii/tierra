@@ -11,8 +11,9 @@ function nendebcom_title_separator( $sep ){
 }
 add_filter( 'document_title_separator', 'nendebcom_title_separator' );
 
-//アイキャッチ画像の有効化
+//アイキャッチ画像の有効化とサイズ指定
 add_theme_support('post-thumbnails');
+
 
 // カスタム投稿タイプ(コレクションページ用)
 register_post_type("collection", [
