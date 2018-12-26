@@ -69,6 +69,7 @@ header h1 img {
 }
 
 .nav-drawer {
+  display: block;
   width: 50px;
   padding: 12px;
   position: relative;
@@ -428,6 +429,7 @@ COLLECTION------------------------------------ */
   text-shadow: 0px 2px 5px #fofofo, 0px -2px 5px #fofofo;
   text-align: center;
   margin-bottom: 0;
+  color: #303;
 }
 .items .item img {
   width: 100%;
@@ -435,6 +437,7 @@ COLLECTION------------------------------------ */
 .items .item h4 {
   text-align: center;
   margin: 10px 0;
+  color: #303;
 }
 .items .item p {
   display: none;
@@ -459,6 +462,41 @@ COLLECTION------------------------------------ */
 }
 .selling .content p {
   margin: 0;
+}
+
+/* -------------------------------------
+SINGLE------------------------------------ */
+.single_item {
+  width: 90%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 20px 10px;
+}
+.single_item img {
+  height: auto !important;
+  max-width: 100% !important;
+  margin-top: 30px;
+}
+.single_item h3 {
+  font-family: "Sawarabi Mincho","游明朝",YuMincho,Meiryo,"Hiragino Mincho ProN",serif;
+  text-shadow: 0px 1px 1px #fofofo, 0px -1px 1px #fofofo;
+  text-align: center;
+  margin-bottom: 0;
+}
+.single_item h4 {
+  text-align: center;
+}
+.single_item p {
+  text-align: center;
+  margin: 0 20px 20px 20px;
+}
+.single_item a {
+  border: 3px solid white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 30px;
 }
 
 /* -------------------------------------

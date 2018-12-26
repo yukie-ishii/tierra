@@ -8,7 +8,7 @@
             当時は、有機物と無機物を重ね合わせた箱・オルゴンアキュムレーター(集積器)として病気の治療などの研究が進められていました。<br>
             一度は表舞台から姿を消したが、アメリカの発明家クロフト夫妻によって一定量の割合でクリスタル(有機物)と金属(無機物)を樹脂で固める事により、さらにパワーが増強する事が発見された。<br>
             2000年、動力(電源)不要の空間浄化装置・オルゴナイトが世界に発表され、
-            「世界を救う技術」として、今世界中に広がりを見せています。<a href="#">-MORE-</a></p>
+            「世界を救う技術」として、今世界中に広がりを見せています。</p>
         </div>
     </div>
 
@@ -31,25 +31,25 @@
 
     <div class="bunner">
         <div class="bun">
-            <a href="">
+            <a href="<?php echo home_url(); ?>/about">
                 <h2>ABOUT</h2>
                 <p>アーテスト紹介</p>
             </a>
         </div>
         <div class="bun">
-            <a href="">
+            <a href="<?php echo home_url(); ?>/collection">
                 <h2>COLLECTION</h2>
                 <p>作品集</p>
             </a>
         </div>
         <div class="bun">
-            <a href="">
+            <a href="https://ameblo.jp/yumi296/" target="_blank">
                 <h2>BLOG</h2>
                 <p>TIERRAブログ</p>
             </a>
         </div>
         <div class="bun">
-            <a href="">
+            <a href="<?php echo home_url(); ?>/contact">
                 <h2>CONTACT</h2>
                 <p>お問い合わせ<br>ご感想</p>
             </a>

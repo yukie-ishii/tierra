@@ -24,8 +24,9 @@ else {
 <title><?php echo wp_get_document_title(); ?></title>
 <link rel="stylesheet" href="<?php the_path(); ?>/css/sanitize.css">
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-<link rel="stylesheet" href="<?php the_path(); ?>/css/style.css">
+<link rel="stylesheet" href="<?php the_path(); ?>/css/style.css" media="screen and (min-width: 481px)">
 <link rel="stylesheet" href="<?php the_path(); ?>/css/sp.css" media="screen and (max-width: 480px)">
+<link rel="SHORTCUT ICON" href="<?php the_path(); ?>/images/logo_favicon.png">
 <?php wp_head(); ?>
 </head>
 

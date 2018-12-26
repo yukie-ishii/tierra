@@ -6,12 +6,12 @@
 <?php while(have_posts()): ?>
     <?php the_post(); ?>
             <div class="single_item">
-                <?php the_post_thumbnail(  'medium'); ?>
-<!--                 <?php set_post_thumbnail_size( 280, 280, true); ?> -->
+                <?php the_post_thumbnail(); ?>
                 <h3><?php the_title(); ?></h3>
                 <?php the_content(); ?>
                 <?php echo post_custom("stone"); ?>
                 <p><?php echo post_custom("recommended"); ?></p>
+                <a href="<?php echo home_url(); ?>/collection">一覧へ戻る</a>
             </div>
 <?php endwhile; ?>
 <?php endif; ?>
