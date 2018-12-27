@@ -16,6 +16,7 @@ else {
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="側に置いた瞬間からポジティブなエネルギーが満ち溢れ、幸運体質へ導くTIERRAのオルゴナイト。
 パワーストーンを特殊加工する事で、見た目の美しさと共に癒し・愛・金運など目的別のエネルギーを拡大させます。
